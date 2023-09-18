@@ -1,0 +1,72 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.container{
+    height: 100%;
+    max-width:  1200px;
+    margin:0 auto ;
+    padding: 20px;
+}
+.container h1{
+    text-align: center;
+    margin: 20px auto;
+    font-size: 3rem;
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card{
+   width: 32%;
+   position: relative;
+   margin-bottom: 20px;
+   border-radius: 10px;
+   overflow: hidden;
+}
+.card img{
+   height: 100%;
+    width: 100%; 
+    /* width and height similar to parent element that card for card img */
+    filter: grayscale(100%);   
+    /* image becomes grey */
+    box-shadow: 0px 0px 20px #333;
+}
+.card:hover{
+    transform: scale(1.03);
+    transition: 0.5s;
+    filter: drop-shadow( 0px 0px 10px #333);
+    /* expand shadow of box */
+}
+.card:hover img{
+    filter: grayscale(0%);
+    /* image becomes coloured */
+}
+
+.card figcaption{
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 20%;
+    width: 100%;
+    padding: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    border-radius: 0px 0px 10px 10px;
+     background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(255,255,255,0)); 
+    transition: 0.5s;
+}
+.card:hover figcaption{
+    opacity: 1;
+    transform: scale(1.03);
+}
+
